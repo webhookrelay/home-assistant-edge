@@ -12,7 +12,7 @@
         "amd64",
         "armhf"
     ],
-    "image": "webhookrelay/home-assistant",
+    "image": "webhookrelay/home-assistant-{arch}",
     "boot": "auto",
     "options": {
         "key": null,
