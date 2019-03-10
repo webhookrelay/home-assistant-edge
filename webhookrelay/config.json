@@ -1,5 +1,5 @@
 {
-    "name": "Webhook Relay - Remote Access",
+    "name": "Webhook Relay - Remote Access (edge)",
     "version": "2.2.1",
     "slug": "webhook-relay-remote-access",
     "description": "Secure remote access without public IP or configuring NAT. Account registration required.",
