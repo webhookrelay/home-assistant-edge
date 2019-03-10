@@ -1,5 +1,5 @@
 {
-    "name": "Webhook Relay Hass.io Add-ons",
-    "url": "https://github.com/webhookrelay/home-assistant",
+    "name": "Webhook Relay Hass.io Add-ons (edge)",
+    "url": "https://github.com/webhookrelay/home-assistant-edge",
     "maintainer": "Karolis Rusenas <karolis@webhookrelay.com>"
   }
