@@ -59,25 +59,33 @@ If you can't resolve your issue, contact as at info@webhookrelay.com
 
 ## New in 2.2.0 version
 
-We have added [Cloudflare](https://www.cloudflare.com/) integration to provide secure TLS pass-through tunnels for any domains (not just DuckDNS anymore). You can transfer your domain management to Cloudflare (it's free) and then use this add-on to create tunnels and automatically configure HTTPS. To start using Cloudflare, set `provider` field in the tunnel:
+We have added [Cloudflare](https://www.cloudflare.com/) integration to provide secure TLS pass-through tunnels for any domains (not just DuckDNS anymore). You can transfer your domain management to Cloudflare (it's free) and then use this add-on to create tunnels and automatically configure HTTPS. To start using Cloudflare, set `provider` field in the tunnel. Read more [here](https://webhookrelay.com/blog/2019/02/15/cloudflare-support-for-home-assistant/)
+
+## New in 2.4.0 version
+
+Added new region support. Currently available new region 'au' (Australia):
 
 ```json
-"tunnels": [
-		{
-			"name": "cf-domain", 
-			"destination": "http://127.0.0.1:8123",
-			"protocol": "tls",			
-			"domain": "ha.example.com",
-			"provider": "cloudflare"
-        }        
+{
+	"key": "**********",
+	"secret": "**********",
+	"region": "au",
+	"forwarding": [
 	],
-```
-
-And add Cloudflare email and API key:
-
-```json
-	"cloudflare": {
-		"email": "your-email@example.com",
-		"api_key": "your-token"
+	"tunnels": [
+		{
+			"name": "hello-Australia", 
+			"destination": "http://localhost:8123",
+			"protocol": "tls",			
+			"domain": "transponder-test.duckdns.org",
+			"auto_gen": false
+		}
+	],
+	"duck_dns": {
+		"token": "**********",
+		"accept_terms": true
 	},
+	"tunnels_enabled": true,
+	"forwarding_enabled": false
+}
 ```
