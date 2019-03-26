@@ -57,13 +57,18 @@ Most issues can be solved following the [installation](https://webhookrelay.com/
 
 If you can't resolve your issue, contact as at info@webhookrelay.com
 
-## New in 2.2.0 version
+## 2.2.0 version
 
 We have added [Cloudflare](https://www.cloudflare.com/) integration to provide secure TLS pass-through tunnels for any domains (not just DuckDNS anymore). You can transfer your domain management to Cloudflare (it's free) and then use this add-on to create tunnels and automatically configure HTTPS. To start using Cloudflare, set `provider` field in the tunnel. Read more [here](https://webhookrelay.com/blog/2019/02/15/cloudflare-support-for-home-assistant/)
 
 ## New in 2.4.0 version
 
-Added new region support. Currently available new region 'au' (Australia):
+Added new region support. Available new regions:
+
+-  **au** (Sydney, Australia)
+-  **us-west** (Silicon Valley, US)
+
+By default, add-on connects to a tunneling service that is located in Belgium (Europe). Configuration with **au** region example:
 
 ```json
 {
@@ -74,7 +79,7 @@ Added new region support. Currently available new region 'au' (Australia):
 	],
 	"tunnels": [
 		{
-			"name": "hello-Australia", 
+			"name": "home-assistant", 
 			"destination": "http://localhost:8123",
 			"protocol": "tls",			
 			"domain": "transponder-test.duckdns.org",
@@ -89,3 +94,5 @@ Added new region support. Currently available new region 'au' (Australia):
 	"forwarding_enabled": false
 }
 ```
+
+If you are using DuckDNS, add-on will automatically configure DNS for you. If you are using Cloudflare as a DNS provider, you will need to modify CNAME record to something like `<tunnel ID>.us-west.webrelay.io` for your domain.
